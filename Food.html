@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านอาหารดังในกรุงเทพ</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    
+    <!-- W3 CSS template -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <style>
+    #mapid {
+    height: 800px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+        <table class="w3-table w3-striped">
+        <tr>
+        <th>ร้านอาหาร</th>
+        <th>ความนิยม</th>
+        </tr>
+        <tr>
+        <td>น้ำตก A</td>
+        <td>ธรรมชาติ</td>
+        </tr>
+        </table>
+        </div>
+        </div>
+<script>
+    var map = L.map("mapid").setView([13.745597730711909, 100.51800073984309], 11);
+ 
+ var osm = L.tileLayer(
+ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+ ).addTo(map);
+ var gsat = L.tileLayer(
+ "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+ ).addTo(map);
+ var OpenStreetMap_HOT = L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png").addTo(map);
+ 
+ var baseMaps = {
+ OSM: osm,
+GoogleSat: gsat,
+StreetMap_HOT: OpenStreetMap_HOT,
+ };
+ 
+ var nonthaburi = {
+    
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "เกตุโอชา",
+        "ความนิยม": 8
+      },
+      "geometry": {
+        "coordinates": [
+          100.62426152883381,
+          13.73766617945519
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "ข้าวต้ม กอชุนฮวด",
+        "ความนิยม": "7"
+      },
+      "geometry": {
+        "coordinates": [
+          100.48340342883915,
+          13.702771235201396
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "เธียนดอง",
+        "ความนิยม": 8
+      },
+      "geometry": {
+        "coordinates": [
+          100.53548306560731,
+          13.728830511155081
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "หน่องริมคลอง",
+        "ความนิยม": 7
+      },
+      "geometry": {
+        "coordinates": [
+          100.58791106189796,
+          13.742567791870698
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "ร้านแม่กลองหัวปลาหม้อไฟ ปูไข่นึ่งนม",
+        "ความนิยม": 9
+      },
+      "geometry": {
+        "coordinates": [
+          100.4446927158715,
+          13.751982158632373
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "ร้านอาหารม่านเมือง",
+        "ความนิยม": 7
+      },
+      "geometry": {
+        "coordinates": [
+          100.68222116520866,
+          13.781405349844562
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "ขาหมูเจริญแสง สีลม",
+        "ความนิยม": "8"
+      },
+      "geometry": {
+        "coordinates": [
+          100.51664951163536,
+          13.723071885631796
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "นายหมงหอยทอด",
+        "ความนิยม": 8
+      },
+      "geometry": {
+        "coordinates": [
+          100.51159374233254,
+          13.745967295048416
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "โจ๊กปรินซ์",
+        "ความนิยม": 7
+      },
+      "geometry": {
+        "coordinates": [
+          100.51563930422822,
+          13.719576240399405
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ร้านอาหาร": "คนชง คนปรุง",
+        "ความนิยม": 9
+      },
+      "geometry": {
+        "coordinates": [
+          100.55135302090031,
+          13.791521190358765
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}
+
+  // interaction by mouseover
+  var tourLayer = L.geoJSON(nonthaburi, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng).bindPopup(feature.properties.ร้านอาหาร);
+ },
+ onEachFeature: function (feature, layer) {
+ layer.on("mouseover", function () {
+ document
+ .getElementById(feature.properties.ร้านอาหาร)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.ร้านอาหาร)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ 
+ var cont = "";
+ cont += "<table class='w3-table w3-striped'>";
+ cont += "<tr>";
+ cont += "<th>ร้านอาหาร</th>";
+ cont += "<th>ความนิยม</th>";
+ cont += "</tr>";
+ for (let i in nonthaburi.features) {
+ cont += "<tr id=" + nonthaburi.features[i].properties.ร้านอาหาร+ ">";
+ cont += "<td>" + nonthaburi.features[i].properties.ร้านอาหาร + "</td>";
+ cont += "<td>" + nonthaburi.features[i].properties.ความนิยม + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+
+ var overlays = {Travel_nonthaburi: tourLayer};
+ //add leyer control
+ L.control.layers(baseMaps, overlays).addTo(map);
+</script>
+
+
+
+
+</body>
+</html>
